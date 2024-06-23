@@ -374,5 +374,8 @@ const bills = [
 ];
 
 // Start coding here
-
-const newBills;
+/*
+  1. filter member that have NULL value
+*/
+const newBills = bills.filter((bill) => bill.member !== null);
+console.log(newBills);
