@@ -1,5 +1,10 @@
 function isPalindrome(string) {
   // Start coding here
+  let revertedString = [...string].reverse();
+  if (revertedString.join("") === string) {
+    return true;
+  }
+  return false;
 }
 
 //Example case
