@@ -374,4 +374,31 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+/**
+ * objective filter the name out of array
+ * 1. using filter method to iterate through name in names's array
+ * 2. check the same name using
+ * 2.1 if name unique add to nameArray[]
+ * 2.2 if name already in nameArray return false
+ */
+const billMembers = bills
+  .filter((bill) => bill.member !== null)
+  .map(bill => bill.member.name)
+
+function getUniqueValue(names) { 
+const seenArray = [];
+
+const uniqueNames = names.filter(name => {
+  if (seenArray.indexOf(name) === -1) {
+    seenArray.push(name);
+    return true; //include name in the unique result
+    
+  }
+  return false; //exclude name from unique result
+});
+
+return uniqueNames;
+}
+
+const totalMembers = (getUniqueValue(billMembers));
+console.log(` Unique Members Count: ${totalMembers.length}`);

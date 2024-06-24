@@ -374,4 +374,13 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+/**
+ * 1. using filter to remove null object
+ * 2. follow by map to create new array by reformay from bills
+ */
+
+const billMembers = bills
+  .filter((bill) => bill.member !== null)
+  .map(bill => bill.member.name)
+
+console.log(billMembers);
