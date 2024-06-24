@@ -374,3 +374,9 @@ const bills = [
 ];
 
 // Start coding here
+/*
+  1. Using reduce method to accumulate all the bill in array object
+*/
+
+let totalBills = bills.reduce((accumulator, bill) => accumulator + bill.total, 0);
+console.log(`Total bill transaction is ${totalBills}`);

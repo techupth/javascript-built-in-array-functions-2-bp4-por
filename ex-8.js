@@ -374,5 +374,16 @@ const bills = [
 ];
 
 // Start coding here
+/*
+    Objective calculate total value from object data base on value from variable in array
+*/
+const totalPaidByLocation = bills.reduce((accumulator, currentValue) => {
+    if (accumulator[currentValue.location]) {
+        accumulator[currentValue.location] += currentValue.total;
+    } else {
+        accumulator[currentValue.location] = currentValue.total;
+    }
+    return accumulator
+}, {});
 
-const totalPaidByLocation;
+console.log(totalPaidByLocation);
